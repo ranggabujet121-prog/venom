@@ -1,0 +1,21 @@
+import telebot
+
+BOT_TOKEN = "8485704972:AAHO5-fkiUvZEzVR4H-g7ncRhvyN71OI6jI"
+CHANNEL_ID = "@RgSignaln_bot"
+
+bot = telebot.TeleBot(BOT_TOKEN)
+
+def send_signal(pair, arah, entry, tp, sl, timeframe):
+    pesan = f"""
+📢 SIGNAL TRADING 📢
+Pair: {pair}
+Arah: {arah}
+Entry: {entry}
+🎯 TP: {tp}
+🛑 SL: {sl}
+TF: {timeframe}
+"""
+    bot.send_message(CHANNEL_ID, pesan)
+
+# Contoh kirim sinyal
+send_signal("EUR/USD", "BUY", "1.0750", "1.0800", "1.0720", "H1")
